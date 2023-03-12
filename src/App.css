@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -19,15 +27,32 @@ a {
   width: 100%;
   height: 100vh;
   inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 888888;
   background: var(--color-bg);
 }
 
 .loading.animate__fadeOut {
-  animation: animate__fadeOut 1s both;
+  -webkit-animation: animate__fadeOut 1s both;
+          animation: animate__fadeOut 1s both;
+}
+
+@-webkit-keyframes animate__fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes animate__fadeOut {
@@ -41,17 +66,6 @@ a {
 }
 
 .gradient__bg {
-  background: -moz-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  background: -webkit-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
 
   background: -o-radial-gradient(
     circle at 3% 25%,
@@ -59,8 +73,9 @@ a {
     rgba(4, 12, 24, 1) 25%
   );
 
-  background: -ms-radial-gradient(
-    circle at 3% 25%,
+  background: -o-radial-gradient(
+    3% 25%,
+    circle,
     rgba(0, 40, 83, 1) 0%,
     rgba(4, 12, 24, 1) 25%
   );
